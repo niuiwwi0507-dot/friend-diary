@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리의 교환일기</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      background: #f7f0e8;
+      color: #51463f;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 24px;
+      background: #fffdf9;
+      border: 1px solid #eadfd4;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px #75604a12;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: 27px;
+    }
+
+    .subtitle {
+      margin-bottom: 28px;
+      color: #9a8879;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 13px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #e5d8cc;
+      border-radius: 9px;
+      background: white;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: 2px solid #d7bba5;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 13px;
+      border: none;
+      border-radius: 9px;
+      background: #b98f76;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a67b63;
+    }
+
+    .divider {
+      margin: 28px 0;
+      border-top: 1px solid #eee3d9;
+    }
+
+    #message {
+      margin-top: 18px;
+      color: #8b6651;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>우리의 교환일기</h1>
+    <p class="subtitle">우리 둘만의 작은 기록장</p>
+
+    <section>
+      <h2>새로운 일기방 만들기</h2>
+
+      <label for="newRoom">방 이름</label>
+      <input id="newRoom" placeholder="우리만의 방 이름">
+
+      <label for="newPassword">방 비밀번호</label>
+      <input id="newPassword" type="password"
+        placeholder="비밀번호 입력">
+
+      <label for="newNickname">내 닉네임</label>
+      <input id="newNickname" placeholder="일기에서 사용할 이름">
+
+      <button onclick="createRoom()">방 만들기</button>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2>만들어진 일기방 입장하기</h2>
+
+      <label for="joinRoom">방 이름</label>
+      <input id="joinRoom" placeholder="친구에게 받은 방 이름">
+
+      <label for="joinPassword">방 비밀번호</label>
+      <input id="joinPassword" type="password"
+        placeholder="방 비밀번호 입력">
+
+      <label for="joinNickname">내 닉네임</label>
+      <input id="joinNickname" placeholder="내 닉네임">
+
+      <button onclick="joinRoom()">일기방 입장</button>
+    </section>
+
+    <p id="message" aria-live="polite">
+      두 사람의 이야기를 이곳에 기록해 보세요.
+    </p>
+  </main>
+
+  <script>
+    function createRoom() {
+      document.getElementById("message").textContent =
+        "방 생성 기능은 Supabase 연결 후 사용할 수 있어요.";
+    }
+
+    function joinRoom() {
+      document.getElementById("message").textContent =
+        "방 입장 기능은 Supabase 연결 후 사용할 수 있어요.";
+    }
+  </script>
+</body>
+</html>
